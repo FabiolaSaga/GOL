@@ -12,7 +12,8 @@ class GameViewController: UIViewController {
     // IBOutlets
     @IBOutlet weak var backgroundGradient: UIView!
     
-
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setGradientBackgroundColor()
@@ -31,6 +32,43 @@ class GameViewController: UIViewController {
         gradientLayer.endPoint = CGPoint(x: 1, y: 1)
 
     }
+    
+    @IBAction func preset1Tapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func preset2Tapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func preset3Tapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func preset4Tapped(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func randomButtonTapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func playButtonTapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func stopButtonTapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func clearButtonTapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func slowSpeedTapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func mediumSpeedTapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func fastSpeedTapped(_ sender: UIButton) {
+    }
+    
+    
+    
 
 
 }

@@ -37,6 +37,9 @@
                                         <state key="normal" title="Slow">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="slowSpeedTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bwR-7U-eUj"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="39Y-jK-pYP" customClass="CustomButton" customModule="GOL" customModuleProvider="target">
                                         <rect key="frame" x="113" y="0.0" width="105" height="40"/>
@@ -49,6 +52,9 @@
                                         <state key="normal" title="Medium">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="mediumSpeedTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wdv-zc-mRf"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="25U-7X-kxy" customClass="CustomButton" customModule="GOL" customModuleProvider="target">
                                         <rect key="frame" x="226" y="0.0" width="105" height="40"/>
@@ -61,6 +67,9 @@
                                         <state key="normal" title="Fast">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="fastSpeedTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Stm-gE-pIl"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -97,8 +106,11 @@
                                         <state key="normal" title="Preset 1">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="preset1Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CWp-VL-ZA8"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAK-Ue-djL" customClass="CustomButton" customModule="GOL" customModuleProvider="target">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAK-Ue-djL" customClass="CustomButton" customModule="GOL" customModuleProvider="target">
                                         <rect key="frame" x="88" y="0.0" width="80" height="40"/>
                                         <color key="backgroundColor" red="0.0" green="0.35294117650000001" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -108,8 +120,11 @@
                                         <state key="normal" title="Preset 2">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="preset2Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Icx-Z4-slZ"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JzL-RO-fSF" customClass="CustomButton" customModule="GOL" customModuleProvider="target">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JzL-RO-fSF" customClass="CustomButton" customModule="GOL" customModuleProvider="target">
                                         <rect key="frame" x="176" y="0.0" width="80" height="40"/>
                                         <color key="backgroundColor" red="0.0" green="0.35294117650000001" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -119,8 +134,11 @@
                                         <state key="normal" title="Preset 3">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="preset3Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eCA-66-azX"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvO-gF-a6f" customClass="CustomButton" customModule="GOL" customModuleProvider="target">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvO-gF-a6f" customClass="CustomButton" customModule="GOL" customModuleProvider="target">
                                         <rect key="frame" x="264" y="0.0" width="80" height="40"/>
                                         <color key="backgroundColor" red="0.0" green="0.35294117650000001" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -130,6 +148,9 @@
                                         <state key="normal" title="Preset 4">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="preset4Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CJA-PJ-xJx"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -146,6 +167,9 @@
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                             </preferredSymbolConfiguration>
                                         </state>
+                                        <connections>
+                                            <action selector="randomButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KLE-GQ-Dvp"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="itd-tQ-QF3" customClass="CustomButton" customModule="GOL" customModuleProvider="target">
                                         <rect key="frame" x="104.5" y="0.0" width="37" height="48.5"/>
@@ -157,6 +181,9 @@
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                             </preferredSymbolConfiguration>
                                         </state>
+                                        <connections>
+                                            <action selector="playButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S8i-A6-z7F"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnX-nW-OtZ" customClass="CustomButton" customModule="GOL" customModuleProvider="target">
                                         <rect key="frame" x="188.5" y="0.0" width="49.5" height="48.5"/>
@@ -168,6 +195,9 @@
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                             </preferredSymbolConfiguration>
                                         </state>
+                                        <connections>
+                                            <action selector="stopButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XGa-1w-yV8"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXU-xx-We6" customClass="CustomButton" customModule="GOL" customModuleProvider="target">
                                         <rect key="frame" x="285" y="0.0" width="47.5" height="48.5"/>
@@ -179,6 +209,9 @@
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                             </preferredSymbolConfiguration>
                                         </state>
+                                        <connections>
+                                            <action selector="clearButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M3b-q1-CQF"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -205,6 +238,7 @@
                     <navigationItem key="navigationItem" title="Game of Life" id="4tv-3t-xuF"/>
                     <connections>
                         <outlet property="backgroundGradient" destination="61v-vd-BTS" id="MMV-8a-euP"/>
+                        <outlet property="collectionView" destination="SWJ-Zt-eEA" id="gVW-jd-RYD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
