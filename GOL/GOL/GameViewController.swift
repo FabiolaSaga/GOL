@@ -6,18 +6,27 @@
 //
 
 import UIKit
+import Foundation
 
 class GameViewController: UIViewController {
     
-    // IBOutlets
+    // MARK: - IBOutlets
     @IBOutlet weak var backgroundGradient: UIView!
-    
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    // MARK: - Properties
+    var dataSource: [Cell] = []
+    var game: Game!
+    let pixelSize = 10
+    let boardWidth = 25
+    let boardHeight = 25
+    var simulationSpeed: Double = 1.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setGradientBackgroundColor()
-        // Do any additional setup after loading the view.
+        collectionView.dataSource = self
+        collectionView.delegate = self
     }
     
     func setGradientBackgroundColor() {
@@ -66,9 +75,22 @@ class GameViewController: UIViewController {
     
     @IBAction func fastSpeedTapped(_ sender: UIButton) {
     }
-    
-    
-    
 
+}
 
+extension GameViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return dataSource.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        collectionView.register(GameCollectionViewCell.self, forCellWithReuseIdentifier: GameCollectionViewCell.reuseIdentifier)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GameCollectionViewCell.reuseIdentifier, for: indexPath) as! GameCollectionViewCell
+        cell.configureWithState(dataSource[indexPath.item].isAlive, cellColor: UIColor.blue)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: pixelSize, height: pixelSize)
+    }
 }
