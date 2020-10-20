@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		F39C3CAB253DD79D00E2E98A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39C3CAA253DD79D00E2E98A /* AppDelegate.swift */; };
 		F39C3CAD253DD79D00E2E98A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39C3CAC253DD79D00E2E98A /* SceneDelegate.swift */; };
-		F39C3CAF253DD79D00E2E98A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39C3CAE253DD79D00E2E98A /* ViewController.swift */; };
 		F39C3CB2253DD79D00E2E98A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F39C3CB0253DD79D00E2E98A /* Main.storyboard */; };
 		F39C3CB4253DD79E00E2E98A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F39C3CB3253DD79E00E2E98A /* Assets.xcassets */; };
 		F39C3CB7253DD79E00E2E98A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F39C3CB5253DD79E00E2E98A /* LaunchScreen.storyboard */; };
@@ -18,6 +17,10 @@
 		F39C3CE5253DD91C00E2E98A /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39C3CE4253DD91C00E2E98A /* Cell.swift */; };
 		F39C3CEA253DD93A00E2E98A /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39C3CE9253DD93A00E2E98A /* GameState.swift */; };
 		F39C3CEF253DD94900E2E98A /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39C3CEE253DD94900E2E98A /* Game.swift */; };
+		F39C3CF7253DEAD000E2E98A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39C3CF6253DEAD000E2E98A /* GameViewController.swift */; };
+		F39C3CFC253DEE7B00E2E98A /* GameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39C3CFB253DEE7B00E2E98A /* GameCollectionViewCell.swift */; };
+		F39C3D0B253E79E700E2E98A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F39C3D0A253E79E700E2E98A /* Colors.xcassets */; };
+		F39C3D10253E7FF600E2E98A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39C3D0F253E7FF600E2E98A /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +44,6 @@
 		F39C3CA7253DD79D00E2E98A /* GOL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GOL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F39C3CAA253DD79D00E2E98A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F39C3CAC253DD79D00E2E98A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F39C3CAE253DD79D00E2E98A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F39C3CB1253DD79D00E2E98A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F39C3CB3253DD79E00E2E98A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F39C3CB6253DD79E00E2E98A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +57,10 @@
 		F39C3CE4253DD91C00E2E98A /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		F39C3CE9253DD93A00E2E98A /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		F39C3CEE253DD94900E2E98A /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		F39C3CF6253DEAD000E2E98A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		F39C3CFB253DEE7B00E2E98A /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
+		F39C3D0A253E79E700E2E98A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		F39C3D0F253E7FF600E2E98A /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +152,8 @@
 			children = (
 				F39C3CB0253DD79D00E2E98A /* Main.storyboard */,
 				F39C3CB5253DD79E00E2E98A /* LaunchScreen.storyboard */,
+				F39C3CFB253DEE7B00E2E98A /* GameCollectionViewCell.swift */,
+				F39C3D0F253E7FF600E2E98A /* CustomButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -153,7 +161,7 @@
 		F39C3CE2253DD8EB00E2E98A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F39C3CAE253DD79D00E2E98A /* ViewController.swift */,
+				F39C3CF6253DEAD000E2E98A /* GameViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -165,6 +173,7 @@
 				F39C3CAC253DD79D00E2E98A /* SceneDelegate.swift */,
 				F39C3CB8253DD79E00E2E98A /* Info.plist */,
 				F39C3CB3253DD79E00E2E98A /* Assets.xcassets */,
+				F39C3D0A253E79E700E2E98A /* Colors.xcassets */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -273,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F39C3CB7253DD79E00E2E98A /* LaunchScreen.storyboard in Resources */,
+				F39C3D0B253E79E700E2E98A /* Colors.xcassets in Resources */,
 				F39C3CB4253DD79E00E2E98A /* Assets.xcassets in Resources */,
 				F39C3CB2253DD79D00E2E98A /* Main.storyboard in Resources */,
 			);
@@ -299,11 +309,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F39C3CAF253DD79D00E2E98A /* ViewController.swift in Sources */,
 				F39C3CEF253DD94900E2E98A /* Game.swift in Sources */,
 				F39C3CE5253DD91C00E2E98A /* Cell.swift in Sources */,
 				F39C3CEA253DD93A00E2E98A /* GameState.swift in Sources */,
+				F39C3CFC253DEE7B00E2E98A /* GameCollectionViewCell.swift in Sources */,
+				F39C3D10253E7FF600E2E98A /* CustomButton.swift in Sources */,
 				F39C3CAB253DD79D00E2E98A /* AppDelegate.swift in Sources */,
+				F39C3CF7253DEAD000E2E98A /* GameViewController.swift in Sources */,
 				F39C3CAD253DD79D00E2E98A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
