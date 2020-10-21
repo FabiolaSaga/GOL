@@ -23,8 +23,159 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PoL-Ro-kLu">
-                                <rect key="frame" x="41.5" y="748" width="331" height="40"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Z5x-TR-TPU">
+                                <rect key="frame" x="20" y="107" width="374" height="400"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="6tx-Xm-mxn"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="5" minimumInteritemSpacing="5" id="LjS-Vv-ie8">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="07l-hc-thP" customClass="CollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Dur-gc-f3P">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="OOZ-zw-fq5">
+                                <rect key="frame" x="40" y="663" width="329" height="48.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EyV-1m-I1s" customClass="CustomButton" customModule="GOL" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="57.5" height="48.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <color key="tintColor" name="AccentColor"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="shuffle" catalog="system" symbolScale="large"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="default">
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                            </preferredSymbolConfiguration>
+                                        </state>
+                                        <connections>
+                                            <action selector="randomButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KLE-GQ-Dvp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="itd-tQ-QF3" customClass="CustomButton" customModule="GOL" customModuleProvider="target">
+                                        <rect key="frame" x="103.5" y="0.0" width="37" height="48.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <color key="tintColor" name="AccentColor"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="play.fill" catalog="system" symbolScale="large"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="default">
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                            </preferredSymbolConfiguration>
+                                        </state>
+                                        <connections>
+                                            <action selector="playButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S8i-A6-z7F"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnX-nW-OtZ" customClass="CustomButton" customModule="GOL" customModuleProvider="target">
+                                        <rect key="frame" x="186.5" y="0.0" width="49.5" height="48.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <color key="tintColor" name="AccentColor"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="stop.circle.fill" catalog="system" symbolScale="large"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="default">
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                            </preferredSymbolConfiguration>
+                                        </state>
+                                        <connections>
+                                            <action selector="stopButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XGa-1w-yV8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXU-xx-We6" customClass="CustomButton" customModule="GOL" customModuleProvider="target">
+                                        <rect key="frame" x="282" y="0.0" width="47" height="48.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <color key="tintColor" name="AccentColor"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="clear.fill" catalog="system" symbolScale="large"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="default">
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                            </preferredSymbolConfiguration>
+                                        </state>
+                                        <connections>
+                                            <action selector="clearButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M3b-q1-CQF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="gVB-7e-5DR">
+                                <rect key="frame" x="41.5" y="608" width="326" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5d-b3-j9J" customClass="CustomButton" customModule="GOL" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.35294117650000001" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="CVl-X3-VOH"/>
+                                            <constraint firstAttribute="height" constant="40" id="c0G-Uy-fKJ"/>
+                                        </constraints>
+                                        <state key="normal" title="Preset 1">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="preset1Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CWp-VL-ZA8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAK-Ue-djL" customClass="CustomButton" customModule="GOL" customModuleProvider="target">
+                                        <rect key="frame" x="82" y="0.0" width="80" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.35294117650000001" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="8dl-kJ-ojc"/>
+                                            <constraint firstAttribute="height" constant="40" id="Kde-kZ-G0n"/>
+                                        </constraints>
+                                        <state key="normal" title="Preset 2">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="preset2Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Icx-Z4-slZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JzL-RO-fSF" customClass="CustomButton" customModule="GOL" customModuleProvider="target">
+                                        <rect key="frame" x="164" y="0.0" width="80" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.35294117650000001" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="evp-c4-XPO"/>
+                                            <constraint firstAttribute="height" constant="40" id="yMc-3V-2kX"/>
+                                        </constraints>
+                                        <state key="normal" title="Preset 3">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="preset3Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eCA-66-azX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvO-gF-a6f" customClass="CustomButton" customModule="GOL" customModuleProvider="target">
+                                        <rect key="frame" x="246" y="0.0" width="80" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.35294117650000001" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="9Cf-aQ-uRh"/>
+                                            <constraint firstAttribute="width" constant="80" id="UHo-lS-OYT"/>
+                                        </constraints>
+                                        <state key="normal" title="Preset 4">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="preset4Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CJA-PJ-xJx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generations: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amj-7w-zuQ">
+                                <rect key="frame" x="44" y="527" width="332" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="PoL-Ro-kLu">
+                                <rect key="frame" x="41.5" y="729" width="325" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RTJ-f8-MN3" customClass="CustomButton" customModule="GOL" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="105" height="40"/>
@@ -42,7 +193,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="39Y-jK-pYP" customClass="CustomButton" customModule="GOL" customModuleProvider="target">
-                                        <rect key="frame" x="113" y="0.0" width="105" height="40"/>
+                                        <rect key="frame" x="110" y="0.0" width="105" height="40"/>
                                         <color key="backgroundColor" red="0.0" green="0.35294117650000001" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="105" id="J4F-qk-tvB"/>
@@ -57,7 +208,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="25U-7X-kxy" customClass="CustomButton" customModule="GOL" customModuleProvider="target">
-                                        <rect key="frame" x="226" y="0.0" width="105" height="40"/>
+                                        <rect key="frame" x="220" y="0.0" width="105" height="40"/>
                                         <color key="backgroundColor" red="0.0" green="0.35294117650000001" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="105" id="gQZ-Id-3J7"/>
@@ -73,172 +224,33 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SWJ-Zt-eEA">
-                                <rect key="frame" x="20" y="111" width="374" height="400"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jYi-fe-Usc">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="A4f-hS-zNu">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="BgW-kW-0P7">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gVB-7e-5DR">
-                                <rect key="frame" x="35" y="529" width="344" height="40"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5d-b3-j9J" customClass="CustomButton" customModule="GOL" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
-                                        <color key="backgroundColor" red="0.0" green="0.35294117650000001" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="CVl-X3-VOH"/>
-                                            <constraint firstAttribute="height" constant="40" id="c0G-Uy-fKJ"/>
-                                        </constraints>
-                                        <state key="normal" title="Preset 1">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="preset1Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CWp-VL-ZA8"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAK-Ue-djL" customClass="CustomButton" customModule="GOL" customModuleProvider="target">
-                                        <rect key="frame" x="88" y="0.0" width="80" height="40"/>
-                                        <color key="backgroundColor" red="0.0" green="0.35294117650000001" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="8dl-kJ-ojc"/>
-                                            <constraint firstAttribute="height" constant="40" id="Kde-kZ-G0n"/>
-                                        </constraints>
-                                        <state key="normal" title="Preset 2">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="preset2Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Icx-Z4-slZ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JzL-RO-fSF" customClass="CustomButton" customModule="GOL" customModuleProvider="target">
-                                        <rect key="frame" x="176" y="0.0" width="80" height="40"/>
-                                        <color key="backgroundColor" red="0.0" green="0.35294117650000001" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="evp-c4-XPO"/>
-                                            <constraint firstAttribute="height" constant="40" id="yMc-3V-2kX"/>
-                                        </constraints>
-                                        <state key="normal" title="Preset 3">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="preset3Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eCA-66-azX"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvO-gF-a6f" customClass="CustomButton" customModule="GOL" customModuleProvider="target">
-                                        <rect key="frame" x="264" y="0.0" width="80" height="40"/>
-                                        <color key="backgroundColor" red="0.0" green="0.35294117650000001" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="9Cf-aQ-uRh"/>
-                                            <constraint firstAttribute="width" constant="80" id="UHo-lS-OYT"/>
-                                        </constraints>
-                                        <state key="normal" title="Preset 4">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="preset4Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CJA-PJ-xJx"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="OOZ-zw-fq5">
-                                <rect key="frame" x="41" y="621" width="332.5" height="48.5"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EyV-1m-I1s" customClass="CustomButton" customModule="GOL" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="57.5" height="48.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <color key="tintColor" name="AccentColor"/>
-                                        <state key="normal">
-                                            <imageReference key="image" image="shuffle" catalog="system" symbolScale="large"/>
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="default">
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                            </preferredSymbolConfiguration>
-                                        </state>
-                                        <connections>
-                                            <action selector="randomButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KLE-GQ-Dvp"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="itd-tQ-QF3" customClass="CustomButton" customModule="GOL" customModuleProvider="target">
-                                        <rect key="frame" x="104.5" y="0.0" width="37" height="48.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <color key="tintColor" name="AccentColor"/>
-                                        <state key="normal">
-                                            <imageReference key="image" image="play.fill" catalog="system" symbolScale="large"/>
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="default">
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                            </preferredSymbolConfiguration>
-                                        </state>
-                                        <connections>
-                                            <action selector="playButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S8i-A6-z7F"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnX-nW-OtZ" customClass="CustomButton" customModule="GOL" customModuleProvider="target">
-                                        <rect key="frame" x="188.5" y="0.0" width="49.5" height="48.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <color key="tintColor" name="AccentColor"/>
-                                        <state key="normal">
-                                            <imageReference key="image" image="stop.circle.fill" catalog="system" symbolScale="large"/>
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="default">
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                            </preferredSymbolConfiguration>
-                                        </state>
-                                        <connections>
-                                            <action selector="stopButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XGa-1w-yV8"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXU-xx-We6" customClass="CustomButton" customModule="GOL" customModuleProvider="target">
-                                        <rect key="frame" x="285" y="0.0" width="47.5" height="48.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <color key="tintColor" name="AccentColor"/>
-                                        <state key="normal">
-                                            <imageReference key="image" image="clear.fill" catalog="system" symbolScale="large"/>
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="default">
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                            </preferredSymbolConfiguration>
-                                        </state>
-                                        <connections>
-                                            <action selector="clearButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M3b-q1-CQF"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="61v-vd-BTS" secondAttribute="bottom" id="2XW-ae-PS3"/>
-                            <constraint firstItem="gVB-7e-5DR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8C9-ag-EJJ"/>
+                            <constraint firstItem="Z5x-TR-TPU" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="3bE-yp-T5W"/>
+                            <constraint firstItem="Z5x-TR-TPU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="3sW-g8-93y"/>
+                            <constraint firstItem="gVB-7e-5DR" firstAttribute="top" secondItem="amj-7w-zuQ" secondAttribute="bottom" constant="52" id="4w8-6t-l8E"/>
+                            <constraint firstItem="PoL-Ro-kLu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="41.5" id="6mV-PB-4oo"/>
+                            <constraint firstItem="gVB-7e-5DR" firstAttribute="centerX" secondItem="OOZ-zw-fq5" secondAttribute="centerX" id="Ao8-L5-FcW"/>
+                            <constraint firstItem="PoL-Ro-kLu" firstAttribute="top" secondItem="OOZ-zw-fq5" secondAttribute="bottom" constant="17.5" id="ApN-rW-DeE"/>
                             <constraint firstItem="61v-vd-BTS" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="CQc-ok-Jc7"/>
                             <constraint firstItem="61v-vd-BTS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DFE-Cs-FrA"/>
-                            <constraint firstItem="RTJ-f8-MN3" firstAttribute="top" secondItem="OOZ-zw-fq5" secondAttribute="bottom" constant="78.5" id="IP1-Yh-C6W"/>
-                            <constraint firstItem="OOZ-zw-fq5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RBv-a9-Y0P"/>
-                            <constraint firstItem="PoL-Ro-kLu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RiO-MK-uXD"/>
-                            <constraint firstItem="gVB-7e-5DR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="529" id="bTj-N4-USD"/>
-                            <constraint firstItem="SWJ-Zt-eEA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="cnG-Kn-bIv"/>
+                            <constraint firstItem="OOZ-zw-fq5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="HtN-yn-Exy"/>
+                            <constraint firstItem="amj-7w-zuQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="L3e-bG-hM1"/>
+                            <constraint firstItem="OOZ-zw-fq5" firstAttribute="top" secondItem="gVB-7e-5DR" secondAttribute="bottom" constant="15" id="TTZ-JD-nDT"/>
+                            <constraint firstItem="Z5x-TR-TPU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="19" id="X2H-96-kZ3"/>
+                            <constraint firstItem="amj-7w-zuQ" firstAttribute="top" secondItem="Z5x-TR-TPU" secondAttribute="bottom" constant="20" id="jLw-dj-ySJ"/>
                             <constraint firstItem="61v-vd-BTS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="kPB-Rj-v3e"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SWJ-Zt-eEA" secondAttribute="trailing" constant="20" id="liI-sM-1cP"/>
-                            <constraint firstItem="SWJ-Zt-eEA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="23" id="nXJ-1Y-9LB"/>
-                            <constraint firstItem="gVB-7e-5DR" firstAttribute="top" secondItem="SWJ-Zt-eEA" secondAttribute="bottom" constant="18" id="pIe-UC-zeZ"/>
-                            <constraint firstItem="OOZ-zw-fq5" firstAttribute="top" secondItem="gVB-7e-5DR" secondAttribute="bottom" constant="52" id="s5s-hk-o4l"/>
+                            <constraint firstItem="gVB-7e-5DR" firstAttribute="leading" secondItem="PoL-Ro-kLu" secondAttribute="leading" id="sNj-kR-BqP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="amj-7w-zuQ" secondAttribute="trailing" constant="38" id="tab-Kj-R2q"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Game of Life" id="4tv-3t-xuF"/>
                     <connections>
                         <outlet property="backgroundGradient" destination="61v-vd-BTS" id="MMV-8a-euP"/>
-                        <outlet property="collectionView" destination="SWJ-Zt-eEA" id="gVW-jd-RYD"/>
+                        <outlet property="collectionView" destination="Z5x-TR-TPU" id="RgF-db-7tq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
