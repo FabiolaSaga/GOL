@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F30F6B102540F4620045B258 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F6B0F2540F4620045B258 /* PopupView.swift */; };
+		F30F6B152540F7320045B258 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F6B142540F7320045B258 /* PopupViewController.swift */; };
 		F39C3CAB253DD79D00E2E98A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39C3CAA253DD79D00E2E98A /* AppDelegate.swift */; };
 		F39C3CAD253DD79D00E2E98A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39C3CAC253DD79D00E2E98A /* SceneDelegate.swift */; };
 		F39C3CB2253DD79D00E2E98A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F39C3CB0253DD79D00E2E98A /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		F30F6B0F2540F4620045B258 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
+		F30F6B142540F7320045B258 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		F39C3CA7253DD79D00E2E98A /* GOL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GOL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F39C3CAA253DD79D00E2E98A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F39C3CAC253DD79D00E2E98A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				F39C3CF6253DEAD000E2E98A /* GameViewController.swift */,
+				F30F6B142540F7320045B258 /* PopupViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				F39C3CE5253DD91C00E2E98A /* Cell.swift in Sources */,
 				F39C3CEA253DD93A00E2E98A /* GameState.swift in Sources */,
 				F39C3CFC253DEE7B00E2E98A /* GameCollectionViewCell.swift in Sources */,
+				F30F6B152540F7320045B258 /* PopupViewController.swift in Sources */,
 				F39C3D10253E7FF600E2E98A /* CustomButton.swift in Sources */,
 				F39C3CAB253DD79D00E2E98A /* AppDelegate.swift in Sources */,
 				F39C3CF7253DEAD000E2E98A /* GameViewController.swift in Sources */,

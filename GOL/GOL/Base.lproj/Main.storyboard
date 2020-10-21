@@ -285,10 +285,10 @@
             </objects>
             <point key="canvasLocation" x="900.00000000000011" y="88.392857142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--Popup View Controller-->
         <scene sceneID="ogw-bx-88D">
             <objects>
-                <viewController id="JFK-pm-3Oo" sceneMemberID="viewController">
+                <viewController id="JFK-pm-3Oo" customClass="PopupViewController" customModule="GOL" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IQm-wc-ZL1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -322,6 +322,10 @@
                                                         <integer key="value" value="5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="closePopupPressed:" destination="JFK-pm-3Oo" eventType="touchUpInside" id="jJY-KD-5AI"/>
+                                                    <action selector="goBack" destination="rn2-nD-9Mt" eventType="touchUpInside" id="1sQ-2H-GDp"/>
+                                                </connections>
                                             </button>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Conway's Game of Life Rules" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="at0-b1-riQ">
                                                 <rect key="frame" x="23" y="19" width="329" height="40"/>
