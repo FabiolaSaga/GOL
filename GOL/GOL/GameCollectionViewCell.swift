@@ -10,6 +10,7 @@ import UIKit
 class GameCollectionViewCell: UICollectionViewCell {
     static let reuseIdentifier = "GameCollectionViewCell"
     let cellView = UIView()
+    let color = UIColor(displayP3Red: 211, green: 211, blue: 211, alpha: 0.5)
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -21,7 +22,7 @@ class GameCollectionViewCell: UICollectionViewCell {
     }
     
     func configureWithState(_ isAlive: Bool, cellColor: UIColor) {
-        self.cellView.backgroundColor = isAlive ? cellColor : UIColor.lightGray
+        self.cellView.backgroundColor = isAlive ? cellColor : color
     }
     
     private func configure() {
