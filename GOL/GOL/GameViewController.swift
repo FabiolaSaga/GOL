@@ -43,37 +43,69 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func preset1Tapped(_ sender: UIButton) {
+        game.runPreset1()
     }
     
     @IBAction func preset2Tapped(_ sender: UIButton) {
+        game.runPreset2()
     }
     
     @IBAction func preset3Tapped(_ sender: UIButton) {
+        game.runPreset3()
     }
     
     @IBAction func preset4Tapped(_ sender: UIButton) {
+        game.runPreset4()
     }
     
     
     @IBAction func randomButtonTapped(_ sender: UIButton) {
+        game.clear()
+        dataSource.removeAll()
+        collectionView.reloadData()
     }
     
     @IBAction func playButtonTapped(_ sender: UIButton) {
+        game = Game(width: boardWidth, height: boardHeight)
+        game.start(gameSpeed: simulationSpeed) { [weak self] state in
+            self?.display(state)
+        }
+    }
+    
+    func display(_ state: GameState) {
+        self.dataSource = state.cells
+        collectionView.reloadData()
     }
     
     @IBAction func stopButtonTapped(_ sender: UIButton) {
+        game.stop()
     }
     
     @IBAction func clearButtonTapped(_ sender: UIButton) {
+        game.clear()
+        dataSource.removeAll()
+        collectionView.reloadData()
     }
     
     @IBAction func slowSpeedTapped(_ sender: UIButton) {
+        simulationSpeed = 1.0
+        game.start(gameSpeed: simulationSpeed) { [weak self] state in
+            self?.display(state)
+        }
     }
     
     @IBAction func mediumSpeedTapped(_ sender: UIButton) {
+        simulationSpeed = 0.5
+        game.start(gameSpeed: simulationSpeed) { [weak self] state in
+            self?.display(state)
+        }
     }
     
     @IBAction func fastSpeedTapped(_ sender: UIButton) {
+        simulationSpeed = 0.33
+        game.start(gameSpeed: simulationSpeed) { [weak self] state in
+            self?.display(state)
+        }
     }
 
 }
