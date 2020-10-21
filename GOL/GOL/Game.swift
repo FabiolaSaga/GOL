@@ -15,10 +15,12 @@ class Game {
     let height: Int
     var currentState: GameState
     var timer: Timer?
+    var generationCount: Int
 
     init(width: Int, height: Int) {
         self.width = width
         self.height = height
+        self.generationCount = 0
         let cells = Array(repeating: Cell.makeDeadCell(), count: width * height)
         currentState = GameState(cells: cells)
     }
@@ -34,6 +36,7 @@ class Game {
     // Generate a random pattern of alive/dead cells
     @discardableResult
     func randomize() -> GameState {
+        generationCount = 0
         let maxItems = width * height - 1
         for point in 0...maxItems {
             currentState[point] = Cell.makeDeadCell()
@@ -58,6 +61,7 @@ class Game {
     // Clear the game board by removing points and deactivating the timer
     @discardableResult
     func clear() -> GameState {
+        generationCount = 0
         for point in 0...624 {
             currentState[point] = Cell.makeDeadCell()
         }
@@ -71,6 +75,7 @@ class Game {
     
     @discardableResult
     func runPreset1() -> GameState {
+        generationCount = 0
         for point in 0...624 {
             currentState[point] = Cell.makeDeadCell()
         }
@@ -84,6 +89,7 @@ class Game {
     
     @discardableResult
     func runPreset2() -> GameState {
+        generationCount = 0
         for point in 0...624 {
             currentState[point] = Cell.makeDeadCell()
         }
@@ -99,6 +105,7 @@ class Game {
     
     @discardableResult
     func runPreset3() -> GameState {
+        generationCount = 0
         for point in 0...624 {
             currentState[point] = Cell.makeDeadCell()
         }
@@ -112,6 +119,7 @@ class Game {
     
     @discardableResult
     func runPreset4() -> GameState {
+        generationCount = 0
         for point in 0...624 {
             currentState[point] = Cell.makeDeadCell()
         }
@@ -129,6 +137,7 @@ class Game {
 
     func iterate() -> GameState {
         var nextState = currentState
+        self.generationCount += 1
         for i in 0...width - 1 {
             for j in 0...height - 1 {
                 let positionInTheArray = j * width + i
