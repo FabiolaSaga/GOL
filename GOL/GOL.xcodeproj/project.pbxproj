@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F30F6B102540F4620045B258 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F6B0F2540F4620045B258 /* PopupView.swift */; };
 		F39C3CAB253DD79D00E2E98A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39C3CAA253DD79D00E2E98A /* AppDelegate.swift */; };
 		F39C3CAD253DD79D00E2E98A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39C3CAC253DD79D00E2E98A /* SceneDelegate.swift */; };
 		F39C3CB2253DD79D00E2E98A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F39C3CB0253DD79D00E2E98A /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F30F6B0F2540F4620045B258 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
 		F39C3CA7253DD79D00E2E98A /* GOL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GOL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F39C3CAA253DD79D00E2E98A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F39C3CAC253DD79D00E2E98A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				F39C3CB5253DD79E00E2E98A /* LaunchScreen.storyboard */,
 				F39C3CFB253DEE7B00E2E98A /* GameCollectionViewCell.swift */,
 				F39C3D0F253E7FF600E2E98A /* CustomButton.swift */,
+				F30F6B0F2540F4620045B258 /* PopupView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F30F6B102540F4620045B258 /* PopupView.swift in Sources */,
 				F39C3CEF253DD94900E2E98A /* Game.swift in Sources */,
 				F39C3CE5253DD91C00E2E98A /* Cell.swift in Sources */,
 				F39C3CEA253DD93A00E2E98A /* GameState.swift in Sources */,

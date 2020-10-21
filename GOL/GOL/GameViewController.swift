@@ -140,7 +140,6 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func colorSelection(_ sender: UISegmentedControl) {
-        
         switch colorsSegmentedControl.selectedSegmentIndex {
             case 0:
                 selectedColor = .blue
@@ -152,10 +151,7 @@ class GameViewController: UIViewController {
                 selectedColor = .blue
         }
     }
-    
-
 }
-
 
 
 extension GameViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
