@@ -112,7 +112,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5d-b3-j9J" customClass="CustomButton" customModule="GOL" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
-                                        <color key="backgroundColor" red="0.0" green="0.35294117650000001" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.43529411764705883" blue="0.79607843137254897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="CVl-X3-VOH"/>
                                             <constraint firstAttribute="height" constant="40" id="c0G-Uy-fKJ"/>
@@ -171,7 +171,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generations: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amj-7w-zuQ">
                                 <rect key="frame" x="44" y="527" width="332" height="29"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" name="AppBlue"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="PoL-Ro-kLu">
@@ -224,6 +224,19 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fcl-Vf-JQ4">
+                                <rect key="frame" x="40" y="779" width="328" height="32"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <segments>
+                                    <segment title="Blue"/>
+                                    <segment title="Green"/>
+                                    <segment title="Red"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" name="AppBlue"/>
+                                <connections>
+                                    <action selector="colorSelection:" destination="BYZ-38-t0r" eventType="valueChanged" id="fSr-aI-BTo"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -239,8 +252,11 @@
                             <constraint firstItem="61v-vd-BTS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DFE-Cs-FrA"/>
                             <constraint firstItem="OOZ-zw-fq5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="HtN-yn-Exy"/>
                             <constraint firstItem="amj-7w-zuQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="L3e-bG-hM1"/>
+                            <constraint firstItem="fcl-Vf-JQ4" firstAttribute="centerX" secondItem="PoL-Ro-kLu" secondAttribute="centerX" id="Qzk-3k-pZP"/>
                             <constraint firstItem="OOZ-zw-fq5" firstAttribute="top" secondItem="gVB-7e-5DR" secondAttribute="bottom" constant="15" id="TTZ-JD-nDT"/>
                             <constraint firstItem="Z5x-TR-TPU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="19" id="X2H-96-kZ3"/>
+                            <constraint firstItem="fcl-Vf-JQ4" firstAttribute="leading" secondItem="OOZ-zw-fq5" secondAttribute="leading" id="YoV-Gx-cdQ"/>
+                            <constraint firstItem="fcl-Vf-JQ4" firstAttribute="top" secondItem="PoL-Ro-kLu" secondAttribute="bottom" constant="10" id="dM8-8b-zsl"/>
                             <constraint firstItem="amj-7w-zuQ" firstAttribute="top" secondItem="Z5x-TR-TPU" secondAttribute="bottom" constant="20" id="jLw-dj-ySJ"/>
                             <constraint firstItem="61v-vd-BTS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="kPB-Rj-v3e"/>
                             <constraint firstItem="gVB-7e-5DR" firstAttribute="leading" secondItem="PoL-Ro-kLu" secondAttribute="leading" id="sNj-kR-BqP"/>
@@ -251,6 +267,11 @@
                     <connections>
                         <outlet property="backgroundGradient" destination="61v-vd-BTS" id="MMV-8a-euP"/>
                         <outlet property="collectionView" destination="Z5x-TR-TPU" id="RgF-db-7tq"/>
+                        <outlet property="colorsSegmentedControl" destination="fcl-Vf-JQ4" id="Zt2-dV-DbZ"/>
+                        <outlet property="preset1" destination="m5d-b3-j9J" id="LGm-79-BUy"/>
+                        <outlet property="preset2" destination="OAK-Ue-djL" id="Y21-84-IVK"/>
+                        <outlet property="preset3" destination="JzL-RO-fSF" id="L6e-K6-3qK"/>
+                        <outlet property="preset4" destination="xvO-gF-a6f" id="QiI-tp-DMP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -283,6 +304,9 @@
         <image name="stop.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AppBlue">
+            <color red="0.0" green="0.43529411764705883" blue="0.79607843137254897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
