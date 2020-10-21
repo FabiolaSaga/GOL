@@ -13,6 +13,11 @@ class GameViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var backgroundGradient: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var colorsSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var preset1: UIButton!
+    @IBOutlet weak var preset2: UIButton!
+    @IBOutlet weak var preset3: UIButton!
+    @IBOutlet weak var preset4: UIButton!
     
     // MARK: - Properties
     var dataSource: [Cell] = []
@@ -21,12 +26,39 @@ class GameViewController: UIViewController {
     let boardWidth = 25
     let boardHeight = 25
     var simulationSpeed: Double = 1.0
+    var selectedColor: UIColor = .green
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setGradientBackgroundColor()
         collectionView.dataSource = self
         collectionView.delegate = self
+        setColorsForSegmentedControl()
+        setButtonState(enabled: false)
+    }
+    
+    func setColorsForSegmentedControl() {
+        UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.white], for: .selected)
+        UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.black], for: .normal)
+    }
+    
+    func setButtonState(enabled: Bool) {
+        preset1.isEnabled = enabled
+        preset2.isEnabled = enabled
+        preset3.isEnabled = enabled
+        preset4.isEnabled = enabled
+        
+        if enabled == false {
+            preset1.alpha = 0.5
+            preset2.alpha = 0.5
+            preset3.alpha = 0.5
+            preset4.alpha = 0.5
+        } else {
+            preset1.alpha = 1
+            preset2.alpha = 1
+            preset3.alpha = 1
+            preset4.alpha = 1
+        }
     }
     
     func setGradientBackgroundColor() {
@@ -60,12 +92,11 @@ class GameViewController: UIViewController {
     
     
     @IBAction func randomButtonTapped(_ sender: UIButton) {
-        game.clear()
-        dataSource.removeAll()
-        collectionView.reloadData()
+        game.randomize()
     }
     
     @IBAction func playButtonTapped(_ sender: UIButton) {
+        setButtonState(enabled: true)
         game = Game(width: boardWidth, height: boardHeight)
         game.start(gameSpeed: simulationSpeed) { [weak self] state in
             self?.display(state)
@@ -102,13 +133,30 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func fastSpeedTapped(_ sender: UIButton) {
-        simulationSpeed = 0.33
+        simulationSpeed = 0.3
         game.start(gameSpeed: simulationSpeed) { [weak self] state in
             self?.display(state)
         }
     }
+    
+    @IBAction func colorSelection(_ sender: UISegmentedControl) {
+        
+        switch colorsSegmentedControl.selectedSegmentIndex {
+            case 0:
+                selectedColor = .blue
+            case 1:
+                selectedColor = .green
+            case 2:
+                selectedColor = .red
+            default:
+                selectedColor = .blue
+        }
+    }
+    
 
 }
+
+
 
 extension GameViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -118,7 +166,7 @@ extension GameViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         collectionView.register(GameCollectionViewCell.self, forCellWithReuseIdentifier: GameCollectionViewCell.reuseIdentifier)
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GameCollectionViewCell.reuseIdentifier, for: indexPath) as! GameCollectionViewCell
-        cell.configureWithState(dataSource[indexPath.item].isAlive, cellColor: UIColor.blue)
+        cell.configureWithState(dataSource[indexPath.item].isAlive, cellColor: selectedColor)
         return cell
     }
     
