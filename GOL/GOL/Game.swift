@@ -14,6 +14,7 @@ class Game {
     let width: Int
     let height: Int
     var currentState: GameState
+    var timer: Timer?
 
     init(width: Int, height: Int) {
         self.width = width
@@ -22,16 +23,109 @@ class Game {
         currentState = GameState(cells: cells)
     }
     
-    func addStateObserver(_ observer: GameStateObserver) {
-            observer?(generateInitialState())
-            Timer.scheduledTimer(withTimeInterval: 0.33, repeats: true) { _ in
-                observer?(self.iterate())
+    // Set up the observer with a random pattern and start the timer which will update the view after each iteration
+    func start(gameSpeed: Double, _ observer: GameStateObserver) {
+        observer?(randomize())
+        timer = Timer.scheduledTimer(withTimeInterval: gameSpeed, repeats: true) { _ in
+            observer?(self.iterate())
+        }
+    }
+    
+    // Generate a random pattern of alive/dead cells
+    @discardableResult
+    func randomize() -> GameState {
+        let maxItems = width * height - 1
+        for point in 0...maxItems {
+            currentState[point] = Cell.makeDeadCell()
+        }
+        
+        let initialStatePoints = self.generateRandom(between: 0...maxItems, count: maxItems/8)
+        
+        for point in initialStatePoints {
+            currentState[point] = Cell.makeLiveCell()
+        }
+        
+        return self.currentState
+    }
+    
+    // Stop the execution of the game by deactivating the timer
+    @discardableResult
+    func stop() -> GameState {
+        timer?.invalidate()
+        return self.currentState
+    }
+    
+    // Clear the game board by removing points and deactivating the timer
+    @discardableResult
+    func clear() -> GameState {
+        for point in 0...624 {
+            currentState[point] = Cell.makeDeadCell()
+        }
+        
+        timer?.invalidate()
+        return self.currentState
+    }
+    
+    // MARK: - Presets
+    // Methods that run preset configurations on the game board
+    
+    @discardableResult
+    func runPreset1() -> GameState {
+        for point in 0...624 {
+            currentState[point] = Cell.makeDeadCell()
+        }
+        
+        for point in 0...24 {
+            currentState[point] = Cell.makeLiveCell()
+        }
+        
+        return self.currentState
+    }
+    
+    @discardableResult
+    func runPreset2() -> GameState {
+        for point in 0...624 {
+            currentState[point] = Cell.makeDeadCell()
+        }
+        
+        for point in 0...200 {
+            if point % 2 == 0 {
+                currentState[point] = Cell.makeLiveCell()
             }
         }
-
-        func reset() {
-            self.generateInitialState()
+        
+        return self.currentState
+    }
+    
+    @discardableResult
+    func runPreset3() -> GameState {
+        for point in 0...624 {
+            currentState[point] = Cell.makeDeadCell()
         }
+        
+        for point in 300...600 {
+            currentState[point] = Cell.makeLiveCell()
+        }
+        
+        return self.currentState
+    }
+    
+    @discardableResult
+    func runPreset4() -> GameState {
+        for point in 0...624 {
+            currentState[point] = Cell.makeDeadCell()
+        }
+        
+        for point in 0...624 {
+            if point % 2 == 0 {
+                currentState[point] = Cell.makeLiveCell()
+            }
+        }
+        
+        return self.currentState
+    }
+    
+    // MARK: - Core Game Logic
 
     func iterate() -> GameState {
         var nextState = currentState
