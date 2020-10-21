@@ -10,7 +10,7 @@ import UIKit
 class GameCollectionViewCell: UICollectionViewCell {
     static let reuseIdentifier = "GameCollectionViewCell"
     let cellView = UIView()
-    let color = UIColor(displayP3Red: 211, green: 211, blue: 211, alpha: 0.5)
+    let color = UIColor(displayP3Red: 211, green: 211, blue: 211, alpha: 0.2)
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
