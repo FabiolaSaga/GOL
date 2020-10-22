@@ -36,6 +36,7 @@ class GameViewController: UIViewController {
     var simulationSpeed: Double = 1.0
     var selectedColor: UIColor = .blue
     var firstTimeRunning = true
+    var gameStarted = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,9 +61,6 @@ class GameViewController: UIViewController {
         randomizeButton.isEnabled = enabled
         stopButton.isEnabled = enabled
         clearButton.isEnabled = enabled
-        slowButton.isEnabled = enabled
-        mediumButton.isEnabled = enabled
-        fastButton.isEnabled = enabled
         
         if enabled == false {
             preset1.alpha = 0.5
@@ -72,9 +70,6 @@ class GameViewController: UIViewController {
             randomizeButton.alpha = 0.5
             stopButton.alpha = 0.5
             clearButton.alpha = 0.5
-            slowButton.alpha = 0.5
-            mediumButton.alpha = 0.5
-            fastButton.alpha = 0.5
         } else {
             preset1.alpha = 1
             preset2.alpha = 1
@@ -83,9 +78,6 @@ class GameViewController: UIViewController {
             randomizeButton.alpha = 1
             stopButton.alpha = 1
             clearButton.alpha = 1
-            slowButton.alpha = 1
-            fastButton.alpha = 1
-            mediumButton.alpha = 1
         }
     }
     
@@ -123,6 +115,7 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func playButtonTapped(_ sender: UIButton) {
+        gameStarted = true
         generationsLabel.isHidden = false
         setButtonState(enabled: true)
         game = Game(width: boardWidth, height: boardHeight)
@@ -145,7 +138,9 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func stopButtonTapped(_ sender: UIButton) {
-        game.stop()
+        if gameStarted {
+            game.stop()
+        }
     }
     
     @IBAction func clearButtonTapped(_ sender: UIButton) {
@@ -156,18 +151,24 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func slowSpeedTapped(_ sender: UIButton) {
-        game.stop()
+        if gameStarted {
+            game.stop()
+        }
         simulationSpeed = 1.0
     }
     
     @IBAction func mediumSpeedTapped(_ sender: UIButton) {
-        game.stop()
+        if gameStarted {
+            game.stop()
+        }
         simulationSpeed = 0.5
         
     }
     
     @IBAction func fastSpeedTapped(_ sender: UIButton) {
-        game.stop()
+        if gameStarted {
+            game.stop()
+        }
         simulationSpeed = 0.3
     }
     
@@ -183,7 +184,6 @@ class GameViewController: UIViewController {
                 selectedColor = .blue
         }
     }
-    
 }
 
 
