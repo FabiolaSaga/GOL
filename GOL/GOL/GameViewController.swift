@@ -18,6 +18,12 @@ class GameViewController: UIViewController {
     @IBOutlet weak var preset2: UIButton!
     @IBOutlet weak var preset3: UIButton!
     @IBOutlet weak var preset4: UIButton!
+    @IBOutlet weak var generationsLabel: UILabel!
+    @IBOutlet weak var randomizeButton: UIButton!
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var stopButton: UIButton!
+    @IBOutlet weak var clearButton: UIButton!
+    
     
     // MARK: - Properties
     var dataSource: [Cell] = []
@@ -26,7 +32,8 @@ class GameViewController: UIViewController {
     let boardWidth = 25
     let boardHeight = 25
     var simulationSpeed: Double = 1.0
-    var selectedColor: UIColor = .green
+    var selectedColor: UIColor = .blue
+    var firstTimeRunning = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +42,7 @@ class GameViewController: UIViewController {
         collectionView.delegate = self
         setColorsForSegmentedControl()
         setButtonState(enabled: false)
+        generationsLabel.isHidden = true
     }
     
     func setColorsForSegmentedControl() {
@@ -47,17 +55,26 @@ class GameViewController: UIViewController {
         preset2.isEnabled = enabled
         preset3.isEnabled = enabled
         preset4.isEnabled = enabled
+        randomizeButton.isEnabled = enabled
+        stopButton.isEnabled = enabled
+        clearButton.isEnabled = enabled
         
         if enabled == false {
             preset1.alpha = 0.5
             preset2.alpha = 0.5
             preset3.alpha = 0.5
             preset4.alpha = 0.5
+            randomizeButton.alpha = 0.5
+            stopButton.alpha = 0.5
+            clearButton.alpha = 0.5
         } else {
             preset1.alpha = 1
             preset2.alpha = 1
             preset3.alpha = 1
             preset4.alpha = 1
+            randomizeButton.alpha = 1
+            stopButton.alpha = 1
+            clearButton.alpha = 1
         }
     }
     
@@ -90,22 +107,30 @@ class GameViewController: UIViewController {
         game.runPreset4()
     }
     
-    
     @IBAction func randomButtonTapped(_ sender: UIButton) {
         game.randomize()
     }
     
     @IBAction func playButtonTapped(_ sender: UIButton) {
+        generationsLabel.isHidden = false
         setButtonState(enabled: true)
         game = Game(width: boardWidth, height: boardHeight)
-        game.start(gameSpeed: simulationSpeed) { [weak self] state in
-            self?.display(state)
+        if firstTimeRunning {
+            game.start(gameSpeed: simulationSpeed) { [weak self] state in
+                self?.display(state)
+            }
+        } else {
+            game.resume(gameSpeed: simulationSpeed) { [weak self] state in
+                self?.display(state)
+            }
         }
+    
     }
     
     func display(_ state: GameState) {
         self.dataSource = state.cells
         collectionView.reloadData()
+        generationsLabel.text = "Generations: \(game.generationCount)"
     }
     
     @IBAction func stopButtonTapped(_ sender: UIButton) {
@@ -114,29 +139,25 @@ class GameViewController: UIViewController {
     
     @IBAction func clearButtonTapped(_ sender: UIButton) {
         game.clear()
+        generationsLabel.text = "Generations: 0"
         dataSource.removeAll()
         collectionView.reloadData()
     }
     
     @IBAction func slowSpeedTapped(_ sender: UIButton) {
+        game.stop()
         simulationSpeed = 1.0
-        game.start(gameSpeed: simulationSpeed) { [weak self] state in
-            self?.display(state)
-        }
     }
     
     @IBAction func mediumSpeedTapped(_ sender: UIButton) {
+        game.stop()
         simulationSpeed = 0.5
-        game.start(gameSpeed: simulationSpeed) { [weak self] state in
-            self?.display(state)
-        }
+        
     }
     
     @IBAction func fastSpeedTapped(_ sender: UIButton) {
+        game.stop()
         simulationSpeed = 0.3
-        game.start(gameSpeed: simulationSpeed) { [weak self] state in
-            self?.display(state)
-        }
     }
     
     @IBAction func colorSelection(_ sender: UISegmentedControl) {
