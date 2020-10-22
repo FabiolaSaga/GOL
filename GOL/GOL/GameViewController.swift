@@ -23,7 +23,9 @@ class GameViewController: UIViewController {
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var clearButton: UIButton!
-    
+    @IBOutlet weak var slowButton: UIButton!
+    @IBOutlet weak var mediumButton: UIButton!
+    @IBOutlet weak var fastButton: UIButton!
     
     // MARK: - Properties
     var dataSource: [Cell] = []
@@ -58,6 +60,9 @@ class GameViewController: UIViewController {
         randomizeButton.isEnabled = enabled
         stopButton.isEnabled = enabled
         clearButton.isEnabled = enabled
+        slowButton.isEnabled = enabled
+        mediumButton.isEnabled = enabled
+        fastButton.isEnabled = enabled
         
         if enabled == false {
             preset1.alpha = 0.5
@@ -67,6 +72,9 @@ class GameViewController: UIViewController {
             randomizeButton.alpha = 0.5
             stopButton.alpha = 0.5
             clearButton.alpha = 0.5
+            slowButton.alpha = 0.5
+            mediumButton.alpha = 0.5
+            fastButton.alpha = 0.5
         } else {
             preset1.alpha = 1
             preset2.alpha = 1
@@ -75,6 +83,9 @@ class GameViewController: UIViewController {
             randomizeButton.alpha = 1
             stopButton.alpha = 1
             clearButton.alpha = 1
+            slowButton.alpha = 1
+            fastButton.alpha = 1
+            mediumButton.alpha = 1
         }
     }
     

@@ -276,13 +276,16 @@
                         <outlet property="clearButton" destination="yXU-xx-We6" id="hmk-V7-V1F"/>
                         <outlet property="collectionView" destination="Z5x-TR-TPU" id="RgF-db-7tq"/>
                         <outlet property="colorsSegmentedControl" destination="fcl-Vf-JQ4" id="Zt2-dV-DbZ"/>
+                        <outlet property="fastButton" destination="25U-7X-kxy" id="hcg-vI-7pk"/>
                         <outlet property="generationsLabel" destination="amj-7w-zuQ" id="Mm7-Vp-2KG"/>
+                        <outlet property="mediumButton" destination="39Y-jK-pYP" id="NM9-T3-ZIg"/>
                         <outlet property="playButton" destination="itd-tQ-QF3" id="K57-Ah-bbZ"/>
                         <outlet property="preset1" destination="m5d-b3-j9J" id="LGm-79-BUy"/>
                         <outlet property="preset2" destination="OAK-Ue-djL" id="Y21-84-IVK"/>
                         <outlet property="preset3" destination="JzL-RO-fSF" id="L6e-K6-3qK"/>
                         <outlet property="preset4" destination="xvO-gF-a6f" id="QiI-tp-DMP"/>
                         <outlet property="randomizeButton" destination="EyV-1m-I1s" id="TzM-ho-PCa"/>
+                        <outlet property="slowButton" destination="RTJ-f8-MN3" id="IPQ-nu-UM1"/>
                         <outlet property="stopButton" destination="tnX-nW-OtZ" id="PcD-mN-Qfe"/>
                     </connections>
                 </viewController>
