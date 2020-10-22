@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Game of Life-->
+        <!--GAME OF LIFE-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="GOL" customModuleProvider="target" sceneMemberID="viewController">
@@ -263,8 +263,8 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="amj-7w-zuQ" secondAttribute="trailing" constant="38" id="tab-Kj-R2q"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Game of Life" id="4tv-3t-xuF">
-                        <barButtonItem key="rightBarButtonItem" title="Info" image="apps.ipad" catalog="system" id="HFq-BX-kES">
+                    <navigationItem key="navigationItem" title="GAME OF LIFE" id="4tv-3t-xuF">
+                        <barButtonItem key="rightBarButtonItem" title="Info" image="icon" id="HFq-BX-kES">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="JFK-pm-3Oo" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="o3O-gg-Iuu"/>
@@ -273,12 +273,17 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backgroundGradient" destination="61v-vd-BTS" id="MMV-8a-euP"/>
+                        <outlet property="clearButton" destination="yXU-xx-We6" id="hmk-V7-V1F"/>
                         <outlet property="collectionView" destination="Z5x-TR-TPU" id="RgF-db-7tq"/>
                         <outlet property="colorsSegmentedControl" destination="fcl-Vf-JQ4" id="Zt2-dV-DbZ"/>
+                        <outlet property="generationsLabel" destination="amj-7w-zuQ" id="Mm7-Vp-2KG"/>
+                        <outlet property="playButton" destination="itd-tQ-QF3" id="K57-Ah-bbZ"/>
                         <outlet property="preset1" destination="m5d-b3-j9J" id="LGm-79-BUy"/>
                         <outlet property="preset2" destination="OAK-Ue-djL" id="Y21-84-IVK"/>
                         <outlet property="preset3" destination="JzL-RO-fSF" id="L6e-K6-3qK"/>
                         <outlet property="preset4" destination="xvO-gF-a6f" id="QiI-tp-DMP"/>
+                        <outlet property="randomizeButton" destination="EyV-1m-I1s" id="TzM-ho-PCa"/>
+                        <outlet property="stopButton" destination="tnX-nW-OtZ" id="PcD-mN-Qfe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -341,9 +346,9 @@
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IRF-PL-w36">
                                                 <rect key="frame" x="8" y="67" width="359" height="263"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <string key="text">Any live cell with two or three live neighbours survives.
+                                                <mutableString key="text">                                                                                  Any live cell with two or three live neighbours survives.
  Any dead cell with three live neighbours becomes a live cell.
- All other live cells die in the next generation. Similarly, all other dead cells stay dead.</string>
+ All other live cells die in the next generation. Similarly, all other dead cells stay dead.</mutableString>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -406,8 +411,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="apps.ipad" catalog="system" width="109" height="128"/>
         <image name="clear.fill" catalog="system" width="128" height="114"/>
+        <image name="icon" width="32" height="32"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
         <image name="shuffle" catalog="system" width="128" height="93"/>
         <image name="stop.circle.fill" catalog="system" width="128" height="121"/>
