@@ -33,6 +33,12 @@ class Game {
         }
     }
     
+    func resume(gameSpeed: Double, _ observer: GameStateObserver) {
+        timer = Timer.scheduledTimer(withTimeInterval: gameSpeed, repeats: true) { _ in
+            observer?(self.iterate())
+        }
+    }
+    
     // Generate a random pattern of alive/dead cells
     @discardableResult
     func randomize() -> GameState {
