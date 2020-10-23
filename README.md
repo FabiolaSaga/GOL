@@ -12,7 +12,20 @@ The Game of Life, also known simply as Life, is a cellular automaton devised by 
 </p>
 
 ### UI in action
+
+#### Rules
 <p float="left">
-  <img src="" width="400" />
+  <img src="https://github.com/FabiolaSaga/GOL/blob/main/rules.gif" width="400" />
   </p>
+  
+#### Changing colors
+<p float="left">
+  <img src="https://github.com/FabiolaSaga/GOL/blob/main/colors.gif" width="400" />
+  </p>
+  
+#### Presets
+<p float="left">
+  <img src="https://github.com/FabiolaSaga/GOL/blob/main/presets.gif" width="400" />
+  </p>
+ 
 
