@@ -1,6 +1,18 @@
 # G.O.L.
- Conway's Game of Life iOS app
+
+## What is Conway's Game of Life?
  
 The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician John Horton Conway in 1970. It is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input.
 
-## Rules
+### Main UI
+<p float="left">
+  <img src="https://github.com/FabiolaSaga/GOL/blob/main/Simulator%20Screen%20Shot%20-%20iPhone%2011%20Pro%20Max%20-%202020-10-23%20at%2009.18.54.png" width="280" />
+  <img src="https://github.com/FabiolaSaga/GOL/blob/main/Simulator%20Screen%20Shot%20-%20iPhone%2011%20Pro%20Max%20-%202020-10-23%20at%2009.17.05.png" width="280" /> 
+  <img src="https://github.com/FabiolaSaga/GOL/blob/main/Simulator%20Screen%20Shot%20-%20iPhone%2011%20Pro%20Max%20-%202020-10-23%20at%2009.17.21.png" width="280" />
+</p>
+
+### UI in action
+<p float="left">
+  <img src="" width="400" />
+  </p>
+
