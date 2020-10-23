@@ -6,9 +6,9 @@ The Game of Life, also known simply as Life, is a cellular automaton devised by 
 
 ### Main UI
 <p float="left">
-  <img src="https://github.com/FabiolaSaga/GOL/blob/main/Simulator%20Screen%20Shot%20-%20iPhone%2011%20Pro%20Max%20-%202020-10-23%20at%2009.18.54.png" width="280" />
-  <img src="https://github.com/FabiolaSaga/GOL/blob/main/Simulator%20Screen%20Shot%20-%20iPhone%2011%20Pro%20Max%20-%202020-10-23%20at%2009.17.05.png" width="280" /> 
-  <img src="https://github.com/FabiolaSaga/GOL/blob/main/Simulator%20Screen%20Shot%20-%20iPhone%2011%20Pro%20Max%20-%202020-10-23%20at%2009.17.21.png" width="280" />
+  <img src="https://github.com/FabiolaSaga/GOL/blob/main/Simulator%20Screen%20Shot%20-%20iPhone%2011%20Pro%20Max%20-%202020-10-23%20at%2009.18.54.png" width="200" />
+  <img src="https://github.com/FabiolaSaga/GOL/blob/main/Simulator%20Screen%20Shot%20-%20iPhone%2011%20Pro%20Max%20-%202020-10-23%20at%2009.17.05.png" width="200" /> 
+  <img src="https://github.com/FabiolaSaga/GOL/blob/main/Simulator%20Screen%20Shot%20-%20iPhone%2011%20Pro%20Max%20-%202020-10-23%20at%2009.17.21.png" width="200" />
 </p>
 
 ### UI in action
