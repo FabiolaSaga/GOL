@@ -95,19 +95,19 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func preset1Tapped(_ sender: UIButton) {
-        game.runPreset1()
+        game.preset1()
     }
     
     @IBAction func preset2Tapped(_ sender: UIButton) {
-        game.runPreset2()
+        game.preset2()
     }
     
     @IBAction func preset3Tapped(_ sender: UIButton) {
-        game.runPreset3()
+        game.preset3()
     }
     
     @IBAction func preset4Tapped(_ sender: UIButton) {
-        game.runPreset4()
+        game.preset4()
     }
     
     @IBAction func randomButtonTapped(_ sender: UIButton) {
