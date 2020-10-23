@@ -80,28 +80,45 @@ class Game {
     // Methods that run preset configurations on the game board
     
     @discardableResult
-    func runPreset1() -> GameState {
+    func preset1() -> GameState {
         generationCount = 0
         for point in 0...624 {
             currentState[point] = Cell.makeDeadCell()
         }
         
-        for point in 0...24 {
+        for point in 0...624 {
+            if point % 5 == 0 {
+                currentState[point] = Cell.makeLiveCell()
+            }
+        }
+        return self.currentState
+    }
+    
+    @discardableResult
+    func preset2() -> GameState {
+        generationCount = 0
+        for point in 0...624 {
+            currentState[point] = Cell.makeDeadCell()
+        }
+        
+        for point in 300...615 {
+            if point % 2 == 0 {
             currentState[point] = Cell.makeLiveCell()
+            }
         }
         
         return self.currentState
     }
     
     @discardableResult
-    func runPreset2() -> GameState {
+    func preset3() -> GameState {
         generationCount = 0
         for point in 0...624 {
             currentState[point] = Cell.makeDeadCell()
         }
         
-        for point in 0...200 {
-            if point % 2 == 0 {
+        for point in 0...300 {
+            if point % 3 == 0 {
                 currentState[point] = Cell.makeLiveCell()
             }
         }
@@ -110,30 +127,14 @@ class Game {
     }
     
     @discardableResult
-    func runPreset3() -> GameState {
+    func preset4() -> GameState {
         generationCount = 0
         for point in 0...624 {
             currentState[point] = Cell.makeDeadCell()
         }
         
-        for point in 300...600 {
+        for point in 25...50{
             currentState[point] = Cell.makeLiveCell()
-        }
-        
-        return self.currentState
-    }
-    
-    @discardableResult
-    func runPreset4() -> GameState {
-        generationCount = 0
-        for point in 0...624 {
-            currentState[point] = Cell.makeDeadCell()
-        }
-        
-        for point in 0...624 {
-            if point % 2 == 0 {
-                currentState[point] = Cell.makeLiveCell()
-            }
         }
         
         return self.currentState
